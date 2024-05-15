@@ -36,6 +36,8 @@ const upDistList = document.getElementById('upDistList')
 const wbDistList = document.getElementById('wbDistList')
 
 const resultBoxes = document.getElementById('resultBoxes');
+const loader = document.getElementById('loader');
+const mainBox = document.getElementById('mainBox');
 
 // state par click karenge tab uske district show karega
 stateNameList.addEventListener("click", function (e) {
@@ -54,10 +56,12 @@ stateNameList.addEventListener("click", function (e) {
 
     loader.style.display = "block";
     resultBoxes.style.display = "none";
+    mainBox.style.display = 'none';
 
     setTimeout(() => {
         loader.style.display = "none";
         resultBoxes.style.display = "block";
+        mainBox.style.display = 'block';
     }, 2000)
 
 
@@ -159,13 +163,15 @@ indiaName.addEventListener('click', function (e) {
         resultBoxes.style.border = '1px solid white';
 
 
-        loader.style.display = "block";
-        resultBoxes.style.display = "none";
+         loader.style.display = "block";
+    resultBoxes.style.display = "none";
+    mainBox.style.display = 'none';
 
-        setTimeout(() => {
-            loader.style.display = "none";
-            resultBoxes.style.display = "block";
-        }, 2000)
+    setTimeout(() => {
+        loader.style.display = "none";
+        resultBoxes.style.display = "block";
+        mainBox.style.display = 'block';
+    }, 2000)
 
         fetchIndiaDetails('India');
     }
@@ -183,14 +189,15 @@ districtName.forEach((dist) => {
 
             resultBoxes.style.border = 'none';
 
+ loader.style.display = "block";
+    resultBoxes.style.display = "none";
+    mainBox.style.display = 'none';
 
-            loader.style.display = "block";
-            resultBoxes.style.display = "none";
-
-            setTimeout(() => {
-                loader.style.display = "none";
-                resultBoxes.style.display = "block";
-            }, 2000)
+    setTimeout(() => {
+        loader.style.display = "none";
+        resultBoxes.style.display = "block";
+        mainBox.style.display = 'block';
+    }, 2000)
 
             fetchIndiaStateDetails(e.target.innerHTML);
         }
@@ -208,10 +215,12 @@ unionTerritories.addEventListener("click", function (e) {
 
     loader.style.display = "block";
     resultBoxes.style.display = "none";
+    mainBox.style.display = 'none';
 
     setTimeout(() => {
         loader.style.display = "none";
         resultBoxes.style.display = "block";
+        mainBox.style.display = 'block';
     }, 2000)
 
 
@@ -230,13 +239,15 @@ searchBtn.addEventListener('click', function (e) {
         resultBoxes.style.border = '1px solid white';
 
 
-        loader.style.display = "block";
-        resultBoxes.style.display = "none";
+         loader.style.display = "block";
+    resultBoxes.style.display = "none";
+    mainBox.style.display = 'none';
 
-        setTimeout(() => {
-            loader.style.display = "none";
-            resultBoxes.style.display = "block";
-        }, 2000)
+    setTimeout(() => {
+        loader.style.display = "none";
+        resultBoxes.style.display = "block";
+        mainBox.style.display = 'block';
+    }, 2000)
 
         fetchIndiaStateDetails(inputBox.value);
 
@@ -336,18 +347,17 @@ function removeParagraph(para, ul, navboxTitle, table) {
 
 
 
-const loader = document.getElementById('loader');
-
-
 // jab page load ya reload hoga tab ye loader icon show hoga
 
 window.addEventListener("load", function () {
 
     loader.style.display = "block";
     resultBoxes.style.display = "none";
+    mainBox.style.display = 'none';
 
     setTimeout(() => {
         loader.style.display = "none";
         resultBoxes.style.display = "block";
+        mainBox.style.display = 'block';
     }, 2000)
 })
